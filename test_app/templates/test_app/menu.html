@@ -1,0 +1,5 @@
+<ul class="menu">
+    {% for item in menu.item.all %}
+        {% include 'test_app/innermenu.html' with item=item url=url %}
+    {% endfor %}
+</ul>
