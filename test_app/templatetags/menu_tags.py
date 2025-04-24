@@ -15,7 +15,7 @@ def menutag(context, menuname):
     url = context['request'].path
     menu = Menu.objects.prefetch_related(
         Prefetch('item', 
-                 queryset = InnerMenu.objects.filter(innermenu = None))
+                 queryset = InnerMenu.objects.all())
     ).get(name = menuname)
 
     return {
